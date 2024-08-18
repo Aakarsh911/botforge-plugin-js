@@ -1,14 +1,5 @@
 (function () {
-    // Wait until the window.customChatBot object and its id are defined
-    var checkChatBotId = function() {
-        if (window.customChatBot && window.customChatBot.id) {
-            initializeChatbot(window.customChatBot.id);
-        } else {
-            // Keep checking every 100ms until customChatBot and id are available
-            setTimeout(checkChatBotId, 100);
-        }
-    };
-
+    initializeChatbot("5f748650d3b5b80001f3f3b4");
     // Initialize the chatbot once the id is available
     function initializeChatbot(chatBotId) {
         // Make an API call to get the chatBot (You may want to handle errors here)
