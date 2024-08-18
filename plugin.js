@@ -1,5 +1,5 @@
 (function () {
-    initializeChatbot("5f748650d3b5b80001f3f3b4");
+    initializeChatbot(window.customChatBot.id);
     // Initialize the chatbot once the id is available
     function initializeChatbot(chatBotId) {
         // Make an API call to get the chatBot (You may want to handle errors here)
