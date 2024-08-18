@@ -1,7 +1,8 @@
-(function initializeChatbot(chatBotId) {
-    // Make an API call to get the chatBot (You may want to handle errors here)
-    fetch(`https://api.chatbot.com/chatbot/${window.customChatBot.id}`);
-
+(function () {
+    // get the chatBotid from the window
+    var chatBotId = window.customChatBot.id;
+    // make an api call to get the chatBot
+    fetch(`https://api.chatbot.com/chatbot/${chatBotId}`)
     // Create the chatbot widget button
     var widgetButton = document.createElement("div");
     widgetButton.id = "chatbot-widget";
@@ -55,11 +56,11 @@
 
     // Toggle chatbot visibility when the widget is clicked
     widgetButton.addEventListener("click", function () {
-        if (chatbotContainer.style.display === "none") {
-            chatbotContainer.style.display = "block";
-        } else {
-            chatbotContainer.style.display = "none";
-        }
+      if (chatbotContainer.style.display === "none") {
+        chatbotContainer.style.display = "block";
+      } else {
+        chatbotContainer.style.display = "none";
+      }
     });
 
     // Optional: Add a close button inside the chatbot
@@ -73,7 +74,7 @@
     closeButton.style.fontSize = "20px";
     closeButton.style.cursor = "pointer";
     closeButton.addEventListener("click", function () {
-        chatbotContainer.style.display = "none";
+      chatbotContainer.style.display = "none";
     });
     chatbotContainer.appendChild(closeButton);
-})();
+  })();
