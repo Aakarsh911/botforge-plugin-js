@@ -1,4 +1,8 @@
 (function () {
+    // get the chatBotid from the window
+    var chatBotId = window.customChatBot.id;
+    // make an api call to get the chatBot
+    fetch(`https://api.chatbot.com/chatbot/${chatBotId}`)
     // Create the chatbot widget button
     var widgetButton = document.createElement("div");
     widgetButton.id = "chatbot-widget";
