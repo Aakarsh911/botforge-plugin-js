@@ -17,7 +17,7 @@
       widgetButton.style.right = "20px";
       widgetButton.style.width = "50px";
       widgetButton.style.height = "50px";
-      widgetButton.style.backgroundColor = widgetColor; // Use fetched widget color
+      widgetButton.style.background = widgetColor; // Use fetched widget color
       widgetButton.style.borderRadius = "50%";
       widgetButton.style.boxShadow = "0 4px 8px rgba(0, 0, 0, 0.1)";
       widgetButton.style.cursor = "pointer";
