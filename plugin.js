@@ -1,13 +1,15 @@
 (function () {
-  // Get the chatBotid from the window
+  // Get the chatBotId from the window
   var chatBotId = window.customChatBot.id;
 
   // Make an API call to get the chatBot configuration
   fetch(`http://localhost:3000/api/bots/${chatBotId}`)
     .then((response) => response.json())
     .then((data) => {
-      // Extract widget color and other settings from the response
+      // Extract widget settings from the response
       var widgetColor = data.bot.widgetColor || "#007bff"; // Fallback to default color if not set
+      var widgetLogo = data.bot.widgetLogo || null; // Fallback to null if not set
+      var widgetIcon = data.bot.widgetIcon || "+"; // Default icon
 
       // Create the chatbot widget button
       var widgetButton = document.createElement("div");
@@ -27,7 +29,19 @@
       widgetButton.style.alignItems = "center";
       widgetButton.style.color = "#fff";
       widgetButton.style.fontSize = "24px";
-      widgetButton.innerHTML = "+";
+
+      // Use widget logo or widget icon inside the button
+      if (widgetLogo) {
+        var logoImg = document.createElement("img");
+        logoImg.src = widgetLogo; // Set the logo URL
+        logoImg.style.width = "60%";
+        logoImg.style.height = "60%";
+        logoImg.style.objectFit = "contain";
+        logoImg.alt = "Widget Logo";
+        widgetButton.appendChild(logoImg);
+      } else {
+        widgetButton.innerHTML = widgetIcon; // Use widget icon if logo is not provided
+      }
 
       // Append the widget button to the body
       document.body.appendChild(widgetButton);
