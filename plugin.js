@@ -3,7 +3,7 @@
   var chatBotId = window.customChatBot.id;
 
   // Make an API call to get the chatBot configuration
-  fetch(`http://localhost:3000/api/bots/${chatBotId}`)
+  fetch(`https://bot-forge.vercel.app/api/bots/${chatBotId}`)
     .then((response) => response.json())
     .then((data) => {
       // Extract widget settings from the response
@@ -64,7 +64,7 @@
 
       // Create the iframe for the chatbot
       var iframe = document.createElement("iframe");
-      iframe.src = `http://localhost:3000/view-bot/${chatBotId}`; // Dynamic iframe URL
+      iframe.src = `https://bot-forge.vercel.app/view-bot/${chatBotId}`; // Dynamic iframe URL
       iframe.style.width = "100%";
       iframe.style.height = "100%";
       iframe.style.border = "none";
